@@ -1,0 +1,42 @@
+<ParkingForm>:
+    orientation: "vertical"
+    padding: 20
+    spacing: 10
+
+    Label:
+        text: "Online Parking Reservation"
+        font_size: 24
+        size_hint_y: None
+        height: 50
+
+    TextInput:
+        id: name_input
+        hint_text: "Enter your name"
+        multiline: False
+
+    TextInput:
+        id: phone_input
+        hint_text: "Enter your phone number"
+        input_filter: "int"
+        multiline: False
+
+    TextInput:
+        id: date_input
+        hint_text: "Enter the date (YYYY-MM-DD)"
+        multiline: False
+
+    TextInput:
+        id: time_input
+        hint_text: "Enter the time (HH:MM)"
+        multiline: False
+
+    TextInput:
+        id: license_plate_input
+        hint_text: "Enter your license plate"
+        multiline: False
+
+    Button:
+        text: "Submit"
+        size_hint_y: None
+        height: 50
+        on_release: root.submit()

@@ -1,0 +1,102 @@
+#(hapus # salah 1) #:import get_color_from_hex kivy.utils.get_color_from_hex # Import dari file kv langsung
+<InputForm>:
+    orientation: "vertical"
+    padding: 40
+    spacing: 5
+    font_name: "Poppins.ttf"
+
+    canvas.before:
+        Color:
+            rgba: 173, 216, 230, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    
+    Image:
+        source:'logo.png'
+        size_hint_y: None
+        height: 150
+
+    Label:
+        text: "Form Data Mahasiswa"
+        font_size: 24
+        size_hint_y: 0.2 #None
+        height: 40
+        bold: True
+        color: app.get_color_from_hex("#3B554A")
+
+    Label:
+        text: "Nama Lengkap:"
+        halign: "left"
+        multiline: False
+        text_size: self.size
+        size_hint_y: None
+        padding_x: 5
+        height: 15
+        color: app.get_color_from_hex("#3B554A")
+
+    TextInput:
+        id: nama_input
+        hint_text: "Nama"
+        multiline: False
+        size_hint_y: None
+        padding_x: 15
+        padding_y: 10
+        height: 40
+
+    Widget:
+        size_hint_y: None
+        height: 5
+
+    Label:
+        text: "NPM/NIM:"
+        halign: "left"
+        multiline: False
+        text_size: self.size
+        size_hint_y: None
+        padding_x: 5
+        height: 15
+        color: app.get_color_from_hex("#3B554A")
+
+    TextInput:
+        id: nim_input
+        hint_text: "NIM"
+        multiline: False
+        size_hint_y: None
+        padding_x: 15
+        padding_y: 10
+        height: 40
+
+    Widget:
+        size_hint_y: None
+        height: 5
+
+    Label:
+        text: "Jurusan:"
+        halign: "left"
+        multiline: False
+        text_size: self.size
+        size_hint_y: None
+        padding_x: 5
+        height: 15
+        color: app.get_color_from_hex("#3B554A")
+
+    TextInput:
+        id: jurusan_input
+        hint_text: "Jurusan"
+        multiline: False
+        size_hint_y: None
+        padding_x: 15        
+        padding_y: 10
+        height: 40
+
+    Widget:
+        size_hint_y: None
+        height: 5
+
+    Button:
+        text: "Submit"
+        size_hint_y: None
+        height: 40
+        on_release: root.show_data()
+

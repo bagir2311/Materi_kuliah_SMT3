@@ -1,0 +1,1 @@
+SELECT kategori, harga FROM produk

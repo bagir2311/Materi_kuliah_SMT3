@@ -1,0 +1,1 @@
+CALL total_penjualan_barang;

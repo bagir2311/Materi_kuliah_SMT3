@@ -1,0 +1,1 @@
+SELECT AVG(harga) FROM produk

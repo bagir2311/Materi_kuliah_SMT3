@@ -1,0 +1,85 @@
+<InputForm>:
+    orientation: "horizontal"
+    padding: 20
+    spacing: 20
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1  # RGBA untuk light blue
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: "vertical"
+        size_hint_x: 0.4
+        Image:
+            source:'logo.png'
+            size_hint_y: None
+            height: 150
+        Label:
+            text: "Nama:"
+            size_hint_y: None
+            height: 30
+            color: 0, 0 , 0 , 1
+
+        TextInput:
+            id: nama_input
+            multiline: False
+            write_tab: False
+
+        Label:
+            text: "NIM:"
+            size_hint_y: None
+            height: 30
+            color: 0, 0 , 0 , 1
+        TextInput:
+            id: nim_input
+            multiline: False
+            write_tab: False
+            
+
+        Label:
+            text: "Jurusan:"
+            size_hint_y: None
+            height: 30
+            color: 0, 0 , 0 , 1
+        TextInput:
+            id: jurusan_input
+            multiline: False
+            write_tab: False
+
+        Button:
+            id: tombol_simpan
+            text: "Tambah Data"
+            size_hint_y: None
+            height: 40
+            # on_release: root.show_data()
+
+
+    BoxLayout:
+        orientation: "vertical"
+        size_hint_x: 0.6
+        canvas.before:
+            Color:
+                rgba: 0, 0, 0, 1  # Warna border tabel (hitam)
+            Line:
+                width: 1.5  # Ketebalan border
+                rectangle: self.x, self.y, self.width, self.height
+        Label:
+            text: "Tabel Data Mahasiswa"
+            bold: True
+            size_hint_y: None
+            height: 50
+            color: 0, 0 , 0 , 1
+            underline: True
+            font_size: 24
+        ScrollView:
+            GridLayout:
+                id: tabel_mahasiswa
+                cols: 6
+                spacing: 10                
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: 30
+                row_force_default: True
+                color:0, 0 , 0 , 1
